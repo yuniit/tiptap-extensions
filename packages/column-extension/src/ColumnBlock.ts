@@ -37,10 +37,18 @@ export const ColumnBlock = Node.create<ColumnBlockOptions>({
     };
   },
 
+  parseHTML() {
+    return [{ tag: `div[data-type="${this.name}"]` }];
+  },
+
   renderHTML({ HTMLAttributes }) {
-    const attrs = mergeAttributes(HTMLAttributes, { class: 'column-block' });
+    const attrs = mergeAttributes(HTMLAttributes, {
+      'data-type': this.name,
+      class: 'column-block',
+    });
     return ['div', attrs, 0];
   },
+
 
   addCommands() {
     const unsetColumns =
