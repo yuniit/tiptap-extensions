@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "pnpm turbo run dev",
     "build": "pnpm turbo run build",
+    "prepare": "npm run build",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "devDependencies": {
